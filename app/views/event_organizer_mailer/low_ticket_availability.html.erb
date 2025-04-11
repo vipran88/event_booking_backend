@@ -1,0 +1,19 @@
+<h1>Low Ticket Availability Alert</h1>
+
+<p>Dear <%= @event_organizer.name %>,</p>
+
+<p>This is an automated notification to inform you that tickets for your event <strong><%= @event.title %></strong> are running low.</p>
+
+<h2>Ticket Details:</h2>
+<ul>
+  <li><strong>Event:</strong> <%= @event.title %></li>
+  <li><strong>Date:</strong> <%= @event.event_date.strftime('%B %d, %Y at %I:%M %p') %></li>
+  <li><strong>Ticket Type:</strong> <%= @ticket.ticket_type %></li>
+  <li><strong>Remaining Tickets:</strong> <%= @remaining_count %> out of <%= @total_count %> (<%= sprintf('%.1f', @percentage) %>%)</li>
+</ul>
+
+<p>You may want to consider adding more tickets or adjusting your marketing strategy accordingly.</p>
+
+<p>You can manage your event and tickets by logging into your account.</p>
+
+<p>Best regards,<br>The Event Booking Team</p>

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  venue: MyString
+  event_date: 2025-04-11 08:05:13
+  capacity: 1
+  event_organizer: one
+
+two:
+  title: MyString
+  description: MyText
+  venue: MyString
+  event_date: 2025-04-11 08:05:13
+  capacity: 1
+  event_organizer: two

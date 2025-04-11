@@ -1,0 +1,22 @@
+<h1>Booking Confirmation</h1>
+
+<p>Dear <%= @customer.name %>,</p>
+
+<p>Thank you for booking tickets for <strong><%= @event.title %></strong>!</p>
+
+<h2>Booking Details:</h2>
+<ul>
+  <li><strong>Event:</strong> <%= @event.title %></li>
+  <li><strong>Date:</strong> <%= @event.event_date.strftime('%B %d, %Y at %I:%M %p') %></li>
+  <li><strong>Venue:</strong> <%= @event.venue %></li>
+  <li><strong>Ticket Type:</strong> <%= @ticket.ticket_type %></li>
+  <li><strong>Quantity:</strong> <%= @booking.quantity %></li>
+  <li><strong>Total Price:</strong> $<%= sprintf('%.2f', @booking.total_price) %></li>
+  <li><strong>Booking Reference:</strong> #<%= @booking.id %></li>
+</ul>
+
+<p>Please keep this email as your booking confirmation. You may be required to show it at the venue.</p>
+
+<p>We hope you enjoy the event!</p>
+
+<p>Best regards,<br>The Event Booking Team</p>
