@@ -1,5 +1,5 @@
 class Api::V1::BookingsController < Api::V1::BaseController
-  before_action :set_booking, only: [:show, :update, :destroy]
+  before_action :set_booking, only: [:show, :destroy]
   
   # Load and authorize resource using CanCanCan
   load_and_authorize_resource except: [:create]

@@ -1,0 +1,27 @@
+---
+:concurrency: <%= ENV.fetch('SIDEKIQ_CONCURRENCY', 5).to_i %>
+:timeout: 25
+:verbose: false
+
+# Queues and their priorities (higher numbers = higher priority)
+:queues:
+  - [critical, 3]
+  - [default, 2]
+  - [mailers, 2]
+  - [low, 1]
+
+# Set maximum retry attempts
+:max_retries: 10
+
+# Specify how many seconds to wait before retrying a job
+:retry_intervals:
+  - 15  # First retry after 15 seconds
+  - 30  # Second retry after 30 seconds
+  - 60  # Third retry after 1 minute
+  - 180 # Fourth retry after 3 minutes
+  - 600 # Fifth retry after 10 minutes
+  - 1800 # Sixth retry after 30 minutes
+  - 3600 # Seventh retry after 1 hour
+  - 7200 # Eighth retry after 2 hours
+  - 14400 # Ninth retry after 4 hours
+  - 28800 # Tenth retry after 8 hours

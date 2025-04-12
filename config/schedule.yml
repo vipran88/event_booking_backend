@@ -1,0 +1,16 @@
+# config/schedule.yml
+# Defines scheduled background jobs for the Event Booking System
+
+# Event reminder job - runs daily at 8:00 AM
+event_reminder_job:
+  cron: '0 8 * * *'  # At 8:00 AM every day
+  class: 'EventReminderJob'
+  queue: 'default'
+  description: 'Sends reminders for events happening in the next 24 hours'
+
+# Ticket availability notification job - runs every 6 hours
+ticket_availability_notification_job:
+  cron: '0 */6 * * *'  # Every 6 hours
+  class: 'TicketAvailabilityNotificationJob'
+  queue: 'default'
+  description: 'Notifies event organizers when ticket availability is running low'
